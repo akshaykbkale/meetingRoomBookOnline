@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/stylesheets/style.css">
+<!------ Include the above in your HEAD tag ---------->
+<body style="background-image: url('/images/bg2.jpg');background-size: cover;background-repeat: no-repeat;background-blend-mode: luminosity;">
+<h1 style="color:black; text-align:center" >Meeting Room Booking</h1>
+	<div class="container">	
+    	<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-login">					
+					<div class="panel-heading">
+						<div class="row">							
+							<div class="col-xs-6">
+								<a href="#" class="active" id="login-form-link">Login</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="#" id="register-form-link">Register</a>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+								<form id="login-form" action="" method="post" role="form" style="display: block;">
+									<div class="form-group">
+										<input type="text" name="username" id="login_username" tabindex="1" class="form-control" placeholder="Username" value=""><span id="inputspan"></span>
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="login_password" tabindex="2" class="form-control" placeholder="Password">
+                                    </div>
+									<div class="form-group text-center alert alert-danger alert-dismissible" id="erroralert">
+										<button type="button" class="close" data-dismiss="alert">&times;</button>
+										
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-primary" value="submit">
+											</div>
+										</div>
+
+									</div>
+									
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="text-center">
+													<a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+								<form id="register-form" action="" method="post" style="display: none;">
+									<div class="form-group">
+										<input type="text" name="username" id="create_username" tabindex="1" class="form-control" placeholder="Username" value="" required>
+										<span id="uae" class="alert-danger" style="display: none;">username already exists!!</span>
+                                    </div>
+                                    <div class="form-group">
+										<input type="text" name="firstname" id="create_firstname" tabindex="1" class="form-control" placeholder="First Name" value="" required>
+                                    </div>
+                                    <div class="form-group">
+										<input type="text" name="lastname" id="create_lastname" tabindex="1" class="form-control" placeholder="Last Name" value="" required>
+                                    </div>
+									<div class="form-group">
+										<input type="password" name="password" id="create_password" tabindex="2" class="form-control" placeholder="Password" required>
+									</div>
+									<div class="form-group">
+										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password" required>
+                                    </div>                                 
+									<div class="form-group">
+										<input type="email" name="email" id="create_email" tabindex="1" class="form-control" placeholder="Email Address" value="" required>
+										<span id="eae" class="alert-danger" style="display: none;">email taken by another user!!</span>
+									</div>
+                                    <div class="form-group">
+										<input type="text" name="company" id="create_company" tabindex="1" class="form-control" placeholder="Company" value="">
+                                    </div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-primary" value="Register Now">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    </body>
+	<script src="/javascripts/login.js"></script>
+
+</html>
