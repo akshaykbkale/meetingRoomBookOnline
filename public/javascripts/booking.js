@@ -1,11 +1,10 @@
-
-
-function addToCart(id) {
+$( document ).ready(function() {
+function cancelBooking(id) {
     //var room_id= document.getElementById();
     console.log(id);
 
     $.ajax({
-        url: "/addCart",
+        url: "/cancelBooking",
         method: "POST",
         contentType:"application/json",
         data: JSON.stringify({
@@ -13,13 +12,14 @@ function addToCart(id) {
         }),
         
         success: function(data){
-            console.log("Added");
+            console.log("cancelled");
             if(data=="added"){
                 var element = document.getElementById(id);
                 element.className += " " + "btn-light";
-                element.innerHTML="Added To Cart";
+                element.innerHTML="Cancelled";
             }
         }
     });
 
 };
+});

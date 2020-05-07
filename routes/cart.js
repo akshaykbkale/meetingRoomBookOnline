@@ -13,12 +13,12 @@ var con = mysql.createConnection({
 });
 
 router.get('/cart',urlencoderParser,function(req,res,next){
-    // const {floor,date,capacity}=req.body;
-    // const floor=req.body.floor;
-    // console.log(floor);
-    con.query(`select room_id,room_name,capacity,floor,projector,conference_telephone from meeting_room`,function(err,result,feilds){
-      res.render('cart',{result});
-      //console.log(result);
+
+     con.query(`select room_id,start_date,end_date from bookings where status="CART";`,function(err,result,feilds){
+
+       res.render('cart',{result});
+       console.log(admin);
+       console.log(result);
     });
 });
 
