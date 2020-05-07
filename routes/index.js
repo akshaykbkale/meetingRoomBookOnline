@@ -172,7 +172,7 @@ router.post('/book/:id',jsonPaser,function(req, res, next) {
 
   console.log(start_date);
   console.log('hee');
-  con.query(`update bookings set start_date="${start}" , end_date="${end}", status="Booked",capacity="${capacity}" where room_id="${param_id}"`, function (err,result,fields) {
+  con.query(`update bookings set start_date="${start}" , end_date="${end}", status="Booked",capacity="${capacity}" where room_id="${param_id}" and status="CART"`, function (err,result,fields) {
     if (err) { console.log(err.message)};
   console.log(result);
     

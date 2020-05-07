@@ -179,8 +179,8 @@
           <li class="list-group-item px-4">Projector:<%= result[i].projector %></li>
           <li class="list-group-item px-4">Status:<%= result[i].status %></li>
         </ul>
-        <div class="card-body">
-            <!-- <i class="fas fa-shopping-cart"></i> -->
+        <div class="card-body">            
+          
             <a href="#" id=<%= result[i].room_id %> onclick="addToCart('<%= result[i].room_id %>')" class="d-line btn btn-primary">Add to cart</a>
             <%if (data.isadmin=="admin") { %>
               <a href="http://localhost:3000/edit/<%= result[i].room_id%>" class="d-line btn btn-primary inline">Edit Room</a>
@@ -199,6 +199,7 @@
  <!-- JQuery -->
 <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 <!-- Bootstrap tooltips -->
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>

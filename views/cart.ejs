@@ -93,7 +93,7 @@
           <form id=<%= result[i].room_id %> action="/book/<%= result[i].room_id %>" method="POST">
           <div class="row bg-light m-2 rounded p-3">
             <div class="col-2 text-white text-center"><img class="img-responsive w-50 h-70" src="images/1.jpg" alt="prewiew"></div>
-            <div class="col-2 text-dark text-center"><h4 class="product-name"><strong><%= result[i].room_id %></strong></h4><h4><small>Galaxy</small></h4></div>
+            <div class="col-2 text-dark text-center"><h4 class="product-name"><strong><%= result[i].room_id %></strong></h4><h4><small><%= result[i].room_name %></small></h4></div>
             <div class="input-group date col-2 text-white pt-3 text-center"><input type="text" id="start_date" name="start_date" class="form-control  search-slt datetimepicker-input input-sm" data-target="#start_date" placeholder="Start Date"/>
               <div class="input-group-append" data-target="#start_date" data-toggle="datetimepicker">
                   <span class="input-group-addon p-2"><i class="fa fa-calendar"></i></span>
@@ -103,8 +103,8 @@
                     <span class="input-group-addon p-2"><i class="fa fa-calendar"></i></span>
                 </div></div>
             <div class="col-2 text-white pt-3 text-center"><input type="number" name="capacity" class="form-control input-sm" value="1"></div>
-            <div class="col-2 text-dark pt-2 text-center"><button type="submit" class="d-inline btn btn-success m-1">Book</button><button  class="d-inline btn btn-danger m-1">Cancel</button></div>
-            
+            <div class="col-2 text-dark pt-2 text-center"><button type="submit" class="d-inline btn btn-success m-1">Update / Book Room</button></div>
+            <!-- <button  class="d-inline btn btn-danger m-1">Cancel</button> -->
           </div>
         </form>
           <% } %>
