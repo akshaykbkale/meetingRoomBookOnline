@@ -1,0 +1,139 @@
+<html>
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <title>Cart</title>
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.js"></script>
+         
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+            <!-- Google Fonts -->
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+            
+            <!-- Bootstrap core CSS -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+            <!-- Material Design Bootstrap -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    </head>
+    <!-- <body style="background: rgb(0,31,36);background: linear-gradient(90deg, rgba(0,31,36,1) 0%, rgba(81,132,186,1) 22%, rgba(0,151,255,1) 85%);"> -->
+        <body style="background: white;">
+  
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light white m-2 rounded mb-3">
+        
+          <!-- Navbar brand -->
+          <a class="navbar-brand" href="#"><img src="https://img.icons8.com/bubbles/50/000000/meeting-room.png"/></a>
+        
+          <!-- Collapse button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+              class="navbar-toggler-icon"></span></button>
+        
+          <!-- Collapsible content -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item h6 px-4">
+                <a class="nav-link" href="http://localhost:3000/home"><b>Home</b><span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item h6 px-4">
+                <a class="nav-link" href="http://localhost:3000/contact">Contact</a>
+              </li>
+              <li class="nav-item h6 px-4">
+                <a class="nav-link" href="http://localhost:3000/about">About</a>
+              </li>   
+            </ul>
+            <!-- Links -->
+        </div>
+        <ul class="nav navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link h2 pt-4" href="#"><pre>Meet @ Office                             </pre></a></li>
+        </ul>
+      </div>
+      <a class="btn btn-light h6 btn-md ml-3" href="http://localhost:3000/cart">
+          <i class="fa fa-shopping-cart"></i> Cart
+          <!-- <span class="badge badge-light">3</span> -->
+      </a>
+        
+          <!-- Collapsible content -->
+                  <!-- Dropdown -->
+                  <ul class="navbar-nav mr-auto">
+                  <li class="nav-item ml-3 rounded dropdown px-4">
+                    <a class="nav-link h6 dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Account</a>
+                      <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                      
+                      <a class="dropdown-item" href="http://localhost:3000/profile">My Profile</a>
+                      <a class="dropdown-item" href="http://localhost:3000/booking">My Bookings</a>
+                      <a class="dropdown-item" href="http://localhost:3000/login">Logout</a>
+                    </div>
+                  </li>
+                </ul>
+        
+        </nav>
+          <br>
+          <!-- heading bar dont delete it -->
+          <div class="row bg-warning mr-2 ml-2 rounded p-3">
+            <div class="col-2 h6 pt-1 text-dark text-center">Room Image</div>
+            <div class="col-2 h6 pt-1 text-dark text-center">Room Number</div>
+            <div class="col-2 h6 pt-1 text-dark text-center">Start Date</div>
+            <div class="col-2 h6 pt-1 text-dark text-center">End Date</div>
+            <div class="col-2 h6 pt-1 text-dark text-center">Number of People</div>
+            <div class="col-2 h6 pt-1 text-dark text-center">Status</div>
+            
+          </div>
+          
+    <!-- iterable content from booking table databse -->
+          <% for(var i=0; i < result.length; i++) { %>   
+          <!-- <form id=<%= result[i].room_id %> action="/book/<%= result[i].room_id %>" method="POST"> -->
+          <div class="row bg-light m-2 rounded p-3">
+            <div class="col-2 text-white text-center"><img class="img-responsive w-50 h-70" src="images/1.jpg" alt="prewiew"></div>
+            <div class="col-2 text-dark text-center"><h4 class="product-name"><strong><%= result[i].room_id %></strong></h4><h4><small>Galaxy</small></h4></div>
+            <div class=" col-2 text-dark pt-3 text-center"><strong><%= result[i].start_date %></strong></div>
+              <div class="col-2 text-dark pt-3 text-center"><strong><%= result[i].start_date %></strong></div>
+            <div class="col-2 text-dark pt-3 text-center"><strong><%= result[i].capacity %></strong></div>
+            <div class="col-2 text-dark pt-2 text-center"><button id ="<%= result[i].room_id %>" onclick="cancelBooking1('<%= result[i].room_id %>')" class="d-inline btn btn-danger m-1">Cancel Booking</button></div>
+            
+          </div>
+        <!-- </form> -->
+          <% } %>
+        <br>        
+  
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- <script src="javascripts/booking.js"></script> -->
+    <script>
+    function cancelBooking1(id) {
+      //var room_id= document.getElementById();
+      console.log(id);
+  
+      $.ajax({
+          url: "/cancelBooking",
+          method: "POST",
+          contentType:"application/json",
+          data: JSON.stringify({
+              'room_id':id
+          }),
+          
+          success: function(data){
+              console.log("cancelled");
+              if(data=="cancelled"){
+                  var element = document.getElementById(id);
+                  element.className += " " + "btn-light";
+                  element.innerHTML="Cancelled";
+              }
+          }
+      });
+  
+  };
+</script>
+  </body>
+</html>
