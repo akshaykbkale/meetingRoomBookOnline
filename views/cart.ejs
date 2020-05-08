@@ -71,6 +71,9 @@
                       
                       <a class="dropdown-item" href="http://localhost:3000/profile">My Profile</a>
                       <a class="dropdown-item" href="http://localhost:3000/booking">My Bookings</a>
+                      <%if (data.isadmin=="admin") { %>
+                        <a class="dropdown-item" href="http://localhost:3000/addRoom">Add Room</a>
+                        <% } %>
                       <a class="dropdown-item" href="http://localhost:3000/login">Logout</a>
                     </div>
                   </li>

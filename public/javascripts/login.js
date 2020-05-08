@@ -131,7 +131,7 @@ document.getElementById('erroralert').style.visibility='hidden';
 				console.log(data);
 				if(data=="false"){
 				document.getElementById('erroralert').style.visibility='visible';
-				document.getElementById('erroralert').innerHTML="Error! A problem has been occurred while submitting your data.";
+				document.getElementById('erroralert').innerHTML="Username or Password entered is wrong.";
 				//document.getElementById('erroralert').appendChild('<button type="button" class="close" data-dismiss="alert">&times;</button>');
 				}
 				if(data=="true"){

@@ -15,11 +15,12 @@ var con = mysql.createConnection({
 router.get('/cart',urlencoderParser,function(req,res,next){
 
      con.query(`select room_id,start_date,end_date from bookings where status="CART";`,function(err,result,feilds){
-
-       res.render('cart',{result});
+      
+       res.render('cart',{result,data:{isadmin:admin}});
        console.log(admin);
        console.log(result);
-    });
+    
+  });
 });
 
 

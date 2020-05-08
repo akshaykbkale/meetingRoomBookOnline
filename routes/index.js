@@ -218,9 +218,9 @@ con.query(`update meeting_room  set status="n/a" where room_id="${rid}"`,functio
 router.post('/updateRoom/:id',jsonPaser, function(req, res) {
   var rid = req.params.id;
   console.log("Editing room");
-  const {room_name,capacity,floor,projector,phone}=req.body;
+  const {room_name,image,capacity,floor,projector,phone}=req.body;
   console.log(rid);
-con.query(`update meeting_room  set room_name="${room_name}",capacity="${capacity}",floor="${floor}",projector="${projector}",conference_telephone="${phone}"  where room_id="${rid}"`,function (err,result,fields){
+con.query(`update meeting_room  set image="${image}", room_name="${room_name}",capacity="${capacity}",floor="${floor}",projector="${projector}",conference_telephone="${phone}"  where room_id="${rid}"`,function (err,result,fields){
     if (err) { console.log(err.message)}
     ;
     res.redirect('/home');    
@@ -235,10 +235,15 @@ router.get('/addRoom',jsonPaser, function(req, res) {
 router.post('/addRoom',jsonPaser, function(req, res) {
   
   console.log("Adding new room");
-  const {room_id,room_name,capacity,floor,projector,phone}=req.body;
+  const {room_id,image,room_name,capacity,floor,projector,phone}=req.body;
   console.log(room_id);
   console.log(room_name);
-con.query(`insert into meeting_room (room_id,room_name,capacity,floor,projector,conference_telephone) values ("${room_id}","${room_name}","${capacity}","${floor}","${projector}","${phone}")`,function (err,result,fields){
+  console.log(capacity);
+  console.log(floor);
+  console.log(projector);
+  console.log(phone);
+  
+con.query(`insert into meeting_room (room_id,image,room_name,capacity,floor,projector,conference_telephone,status) values ("${room_id}","${image}","${room_name}","${capacity}","${floor}","${projector}","${phone}","Available")`,function (err,result,fields){
     if (err) { console.log(err.message)}
     ;
     res.redirect('/home');    

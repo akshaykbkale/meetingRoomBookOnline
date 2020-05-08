@@ -1,6 +1,7 @@
 <html>
   <head>
    <!-- Font Awesome -->
+   <title>Edit room</title>
    <link rel="stylesheet" href="/stylesheets/style.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.js"></script>
@@ -89,10 +90,17 @@
 <div>
 <div class="container">
     <form class="form-group" action="/updateRoom/<%= result[0].room_id %>" method="POST">
-    <img src="/images/<%=1%>.jpg" style="height: 200px; width: 200px">
+    <img src="/images/<%=result[0].image%>" style="height: 200px; width: 200px">
     <div class="form-group">
-        <label>Room Name</label>
-        <input name="room_name" class="form-control"  value="<%= result[0].room_name %>"></input>
+      <label><strong>Room ID - <%= result[0].room_id %></strong></label>
+  </div>
+    <div class="form-group">
+      <label>Room Name</label>
+      <input name="room_name" class="form-control"  value="<%= result[0].room_name %>"></input>
+  </div>
+    <div class="form-group">
+        <label>Room Image</label>
+        <input name="image" class="form-control" placeholder="Enter the name of the photo in images folder."  value="<%= result[0].image %>"></input>
     </div>
     <div class="form-group">
         <label>Room Capacity</label>

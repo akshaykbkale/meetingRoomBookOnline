@@ -31,17 +31,17 @@ router.post('/searchResult',urlencoderParser,function(req,res,next){
       searchText="%";
     }
     if(status=="Room availability"){
-      status="%";
+      status="a";
     }
     if(status=="Not Available"){
       status="n";
     }
     if(status=="Available"){
-      status="ava";
+      status="va";
     }
 
     console.log("Floor:"+floor+" and capacity:"+capacity+" and searchText:"+searchText+" and status:"+status);
-        con.query(`select room_id,room_name,capacity,floor,projector,conference_telephone,status from meeting_room  where floor in (${floor}) and capacity in (${capacity}) and room_name like '%${searchText}%' and status like '%${status}%'`,function(err,result,feilds){
+        con.query(`select room_id,image,room_name,capacity,floor,projector,conference_telephone,status from meeting_room  where floor in (${floor}) and capacity in (${capacity}) and room_name like '%${searchText}%' and status like '%${status}%'`,function(err,result,feilds){
           res.render('searchResult',{result,data:{isadmin:admin}});
           console.log(result);
         });

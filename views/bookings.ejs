@@ -3,7 +3,7 @@
         
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <title>Cart</title>
+            <title>Bookings</title>
             <!-- Bootstrap CSS -->
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -96,7 +96,7 @@
             <div class="col-2 text-white text-center"><img class="img-responsive w-50 h-70" src="images/1.jpg" alt="prewiew"></div>
             <div class="col-2 text-dark text-center"><h4 class="product-name"><strong><%= result[i].room_id %></strong></h4><h4><small>Galaxy</small></h4></div>
             <div class=" col-2 text-dark pt-3 text-center"><strong><%= result[i].start_date %></strong></div>
-              <div class="col-2 text-dark pt-3 text-center"><strong><%= result[i].start_date %></strong></div>
+              <div class="col-2 text-dark pt-3 text-center"><strong><%= result[i].end_date %></strong></div>
             <div class="col-2 text-dark pt-3 text-center"><strong><%= result[i].capacity %></strong></div>
             <div class="col-2 text-dark pt-2 text-center"><button id ="<%= result[i].room_id %>" onclick="cancelBooking1('<%= result[i].room_id %>')" class="d-inline btn btn-danger m-1">Cancel Booking</button></div>
             
